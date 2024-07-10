@@ -6,7 +6,7 @@ import './styles.css'
 
 
 
-export default function Accordion() {
+export default function Accordion(props) {
 
     const [selected, setSelected] = useState(null)
     const [noticeSign, setNoticeSign] = useState('+')
@@ -36,8 +36,8 @@ export default function Accordion() {
             justifyContent: 'space-between',
             alignItems: 'center'
         }}>
-        <h1>Top stores at a glance</h1>
-        <button onClick={() => setEnableMultiple(!enableMultiple)}>Enable Multiple{enableMultiple? ' ON':' Off'}</button>
+        <h1>{props.title}</h1>
+        <button onClick={() => setEnableMultiple(!enableMultiple)}>Enable Multiple selection: {enableMultiple? ' ON':' Off'}</button>
        
         </div>
          {
